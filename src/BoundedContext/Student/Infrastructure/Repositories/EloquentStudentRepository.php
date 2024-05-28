@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Src\BoundedContext\Student\Infrastructure\Repositories;
 
 use App\Models\Student as EloquentStudentModel;
-use Illuminate\Support\Collection;
 use Src\BoundedContext\Student\Domain\Contracts\StudentRepositoryContract;
 use Src\BoundedContext\Student\Domain\Student;
 use Src\BoundedContext\Student\Domain\ValueObjects\StudentEmail;
@@ -30,7 +29,7 @@ final class EloquentStudentRepository implements StudentRepositoryContract
         return $students;
     }
 
-    public function find(studentId $id): ?student
+    public function find(studentId $id): ?Student
     {
         $student = $this->eloquentStudentModel->findOrFail($id->value());
 
