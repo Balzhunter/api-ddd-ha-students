@@ -11,6 +11,8 @@ use Src\BoundedContext\Student\Domain\ValueObjects\StudentName;
 
 interface StudentRepositoryContract
 {
+    public function findAll();
+
     public function find(StudentId $studentId): ?Student;
 
     public function findByCriteria(StudentName $studentName, StudentEmail $studentEmail): ?Student;
