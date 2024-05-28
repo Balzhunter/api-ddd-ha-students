@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace Src\BoundedContext\Student\Infrastructure;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Src\BoundedContext\Student\Application\CreateStudentUseCase;
 use Src\BoundedContext\Student\Infrastructure\Repositories\EloquentStudentRepository;
 
-final class CreateStudentInfra
+class CreateStudentController extends Controller
 {
     private $repository;
 
@@ -24,9 +25,11 @@ final class CreateStudentInfra
         $studentEmail = $request->input('email');
 
         $createStudentUseCase = new CreateStudentUseCase($this->repository);
-        $createStudentUseCase->__invoke(
+        $student = $createStudentUseCase->__invoke(
             $studentName,
             $studentEmail,
         );
+
+        return $student;
     }
 }

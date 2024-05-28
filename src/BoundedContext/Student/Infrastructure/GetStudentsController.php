@@ -1,13 +1,14 @@
 <?php
 
-declare(strict_types=1);
+// declare(strict_types=1);
 
 namespace Src\BoundedContext\Student\Infrastructure;
 
+use App\Http\Controllers\Controller;
 use Src\BoundedContext\Student\Application\GetStudentsUseCase;
 use Src\BoundedContext\Student\Infrastructure\Repositories\EloquentStudentRepository;
 
-final class GetStudentsController
+class GetStudentsController extends Controller
 {
     private $repository;
 

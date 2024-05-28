@@ -26,7 +26,7 @@ final class EloquentStudentRepository implements StudentRepositoryContract
     {
         $students = $this->eloquentStudentModel->all();
 
-        // Return Domain student model
+        // Return Eloquent Students result
         return $students;
     }
 
@@ -60,8 +60,8 @@ final class EloquentStudentRepository implements StudentRepositoryContract
         $newStudent = $this->eloquentStudentModel;
 
         $data = [
-            'name'              => $student->name()->value(),
-            'email'             => $student->email()->value(),
+            'name' => $student->name()->value(),
+            'email' => $student->email()->value(),
         ];
 
         $newStudent->create($data);
@@ -72,7 +72,7 @@ final class EloquentStudentRepository implements StudentRepositoryContract
         $studentToUpdate = $this->eloquentStudentModel;
 
         $data = [
-            'name'  => $student->name()->value(),
+            'name' => $student->name()->value(),
             'email' => $student->email()->value(),
         ];
 
