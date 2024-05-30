@@ -9,13 +9,15 @@
 
 ## Run Laravel with SQLite
 
-1. Install composer `composer install`
-2. Run migrations `php artisan migrate`
-3. Run server `php artisan serve`
+1. Create env file using env.example
+2. Install composer `composer install`
+3. And remember to generate your key: `php artisan key:generate`
+4. Run migrations `php artisan migrate`
+5. Run server `php artisan serve`
 
 ## Run Laravel with MySQL
 
-1. Change env DB_CONNECTION=mysql and uncomment:
+1. Create env file using env.example and change DB_CONNECTION=mysql and uncomment:
    DB_HOST=127.0.0.1
    DB_PORT=3306
    DB_DATABASE=laravel
@@ -24,8 +26,9 @@
    to put your database credentials.
 
 2. Install composer `composer install`
-3. Run migrations `php artisan migrate`
-4. Run server `php artisan serve`
+3. And remember to generate your key: `php artisan key:generate`
+4. Run migrations `php artisan migrate`
+5. Run server `php artisan serve`
 
 ## Consume API
 
