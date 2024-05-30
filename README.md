@@ -26,3 +26,31 @@
 2. Install composer `composer install`
 3. Run migrations `php artisan migrate`
 4. Run server `php artisan serve`
+
+## Consume API
+
+### Create a new student
+
+POST http://localhost:8000/api/students
+
+```
+{
+  "name": "Victor",
+  "email": "balvirp6@gmail.com"
+}
+```
+
+### Get all students
+
+GET http://localhost:8000/api/students
+
+### Get by Criteria
+
+GET http://localhost:8000/api/studentscriteria
+
+```
+{
+  "name": "Victor",
+  "email": "balvirp6@gmail.com"
+}
+```
